@@ -29,14 +29,14 @@ function ContentInputBox01(props: Props) {
       <div className="field-box">
         <Form>
           <Form.Group widths="equal">
-            <Form.Input fluid label="姓" placeholder="First name" />
-            <Form.Input fluid label="名" placeholder="Last name" />
+            <Form.Input fluid={true} label="姓" placeholder="First name" />
+            <Form.Input fluid={true} label="名" placeholder="Last name" />
           </Form.Group>
           <Form.Group widths="equal">
-            <Form.Input fluid label="職種" placeholder="F" />
-            <Form.Input fluid label="学習単位" placeholder="Last name" />
+            <Form.Input fluid={true} label="職種" placeholder="F" />
+            <Form.Input fluid={true} label="学習単位" placeholder="Last name" />
             <Form.Select
-              fluid
+              fluid={true}
               label="Gender"
               options={options}
               placeholder="Gender"

@@ -3,6 +3,12 @@ body {
   height: auto;
 }
 
+/* layout ≒ FLOCSS  */
+
+.link {
+  display: inline-block;
+}
+
 .p-1 {
   padding: 8px;
 }
@@ -15,4 +21,15 @@ body {
 }
 .mb-4 {
   margin-bottom: 32px;
+}
+
+/* SMACSS ------- */
+
+.footer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  writing-mode: vertical-rl;
+  text-align: center;
 }

@@ -1,10 +1,11 @@
 import ContentInputs from '../components/ContentInputsTab'
+import { Container } from 'semantic-ui-react'
 
 function Index() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <Container>
       index ユーザー情報に対して、オペレーションの構造への変化に対する因子
-    </main>
+    </Container>
   )
 }
 

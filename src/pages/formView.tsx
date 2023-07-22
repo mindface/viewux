@@ -1,13 +1,13 @@
 import ContainerForm from '../components/ContainerForm'
 import { UserProvider } from '../context/user'
-
+import { Container } from 'semantic-ui-react'
 function Index() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <Container>
       <UserProvider>
         <ContainerForm />
       </UserProvider>
-    </main>
+    </Container>
   )
 }
 

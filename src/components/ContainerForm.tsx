@@ -10,9 +10,9 @@ function ContainerForm() {
   return (
     <div className="container-form">
       <div className="actions">
-        <Button content="1" onClick={() => setView('1')} primary />
-        <Button content="2" onClick={() => setView('2')} primary />
-        <Button content="3" onClick={() => setView('3')} primary />
+        <Button content="Accordion" onClick={() => setView('1')} primary />
+        <Button content="Tab" onClick={() => setView('2')} primary />
+        <Button content="scroll" onClick={() => setView('3')} primary />
       </div>
       {view === '1' && <ContentInputsAccordion />}
       {view === '2' && <ContentInputsTab />}

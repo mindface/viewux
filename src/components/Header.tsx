@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Input, Menu } from 'semantic-ui-react'
+import { Header as BaseHeader, List } from 'semantic-ui-react'
 
 const pagelist = [
   {
@@ -21,16 +21,19 @@ const pagelist = [
 
 function Header() {
   return (
-    <header className="header">
-      <div className="logo">logo</div>
-      <Menu secondary>
-        {pagelist.map((item, k) => (
-          <Menu.Item key={`pagelist${k}`}>
-            <Link href={item.path}>{item.name}</Link>
-          </Menu.Item>
-        ))}
-      </Menu>
-    </header>
+    <BaseHeader>
+      <div className="p-1">
+        <List horizontal>
+          <List.Item icon='ordered list' />
+          {pagelist.map((item, k) => (
+            <List.Item
+              key={`List.Item${k}`}
+              content={<Link href={item.path}>{item.name}</Link>}
+            />
+          ))}
+        </List>
+      </div>
+    </BaseHeader>
   )
 }
 

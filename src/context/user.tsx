@@ -1,5 +1,4 @@
 import { Dispatch, createContext, useReducer, ReactNode } from 'react'
-import { render } from 'react-dom'
 
 export interface User {
   id: number

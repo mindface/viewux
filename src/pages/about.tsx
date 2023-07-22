@@ -1,5 +1,7 @@
+import ContainerInfoThis from "../components/ContainerInfoThis";
+import { Container } from 'semantic-ui-react'
 function About() {
-  return <div>About</div>
+  return <Container><ContainerInfoThis /></Container>
 }
 
 export default About
