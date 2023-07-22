@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Tab, Accordion } from 'semantic-ui-react'
+import { Accordion } from 'semantic-ui-react'
 import UserInfoBox from './ElementUserInfoBox'
 import ContentInputBox01 from './ContentInputBox01'
 import ContentInputBox02 from './ContentInputBox02'

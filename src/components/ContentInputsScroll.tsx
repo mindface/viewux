@@ -1,5 +1,3 @@
-import React, { useState } from 'react'
-import { Tab, Accordion } from 'semantic-ui-react'
 import ContentInputBox01 from './ContentInputBox01'
 import ContentInputBox02 from './ContentInputBox02'
 import ContentInputBox03 from './ContentInputBox03'

@@ -1,6 +1,5 @@
-import { type } from 'os'
 import React, { useState } from 'react'
-import { Input, Button, Checkbox, Form } from 'semantic-ui-react'
+import { Form } from 'semantic-ui-react'
 import type { CheckboxProps } from 'semantic-ui-react'
 
 const options = [

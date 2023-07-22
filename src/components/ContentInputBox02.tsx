@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { Form } from 'semantic-ui-react'
-import type { CheckboxProps } from 'semantic-ui-react'
 
 const options = [
   { key: 'm', text: 'Male', value: 'male' },
@@ -16,7 +15,6 @@ type Props = {
 
 function ContentInputBox02(props: Props) {
   const { type, statTabAction, className } = props
-  const [value, valueSet] = useState('')
   const _statTabAction = statTabAction ?? (() => {})
 
   const handleChange = (e: Event, value: any) => {

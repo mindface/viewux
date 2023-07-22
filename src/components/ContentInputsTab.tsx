@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Tab } from 'semantic-ui-react'
 import ElementUserInfoBox from './ElementUserInfoBox'
 import ContentInputBox01 from './ContentInputBox01'

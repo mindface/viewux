@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
-import { Input, Button, Confirm, Form } from 'semantic-ui-react'
-import type { CheckboxProps } from 'semantic-ui-react'
+import { Input, Confirm, Form } from 'semantic-ui-react'
 
 const options = [
   { key: 'm', text: 'Male', value: 'male' },
