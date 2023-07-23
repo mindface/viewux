@@ -1,4 +1,3 @@
-import React, { useState } from 'react'
 import { Form } from 'semantic-ui-react'
 
 const options = [
@@ -17,10 +16,9 @@ function ContentInputBox02(props: Props) {
   const { type, statTabAction, className } = props
   const _statTabAction = statTabAction ?? (() => {})
 
-  const handleChange = (e: Event, value: any) => {
-    console.log(e)
-    console.log(value)
-  }
+  // const handleChange = (e: Event, value: string) => {
+  //   console.log(value)
+  // }
 
   return (
     <div className={`content-input-box ${className}`}>

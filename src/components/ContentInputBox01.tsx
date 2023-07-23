@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { FormEvent, useState } from 'react'
 import { Form } from 'semantic-ui-react'
 import type { CheckboxProps } from 'semantic-ui-react'
 
@@ -19,10 +19,10 @@ function ContentInputBox01(props: Props) {
   const [value, valueSet] = useState('')
   const _statTabAction = statTabAction ?? (() => {})
 
-  const handleChange = (e: Event, value: any) => {
-    console.log(e)
-    console.log(value)
-  }
+  // const handleChange = (e: Event, value: any) => {
+  //   console.log(e)
+  //   console.log(value)
+  // }
 
   return (
     <div className={`content-input-box ${className}`}>
@@ -49,7 +49,7 @@ function ContentInputBox01(props: Props) {
               value="sm"
               checked={value === 'sm'}
               onChange={(
-                event: React.FormEvent<HTMLInputElement>,
+                event: FormEvent<HTMLInputElement>,
                 data: CheckboxProps,
               ) => {
                 valueSet((data?.value as string) ?? '')
@@ -60,7 +60,7 @@ function ContentInputBox01(props: Props) {
               value="md"
               checked={value === 'md'}
               onChange={(
-                event: React.FormEvent<HTMLInputElement>,
+                event: FormEvent<HTMLInputElement>,
                 data: CheckboxProps,
               ) => {
                 valueSet((data?.value as string) ?? '')
@@ -71,7 +71,7 @@ function ContentInputBox01(props: Props) {
               value="lg"
               checked={value === 'lg'}
               onChange={(
-                event: React.FormEvent<HTMLInputElement>,
+                event: FormEvent<HTMLInputElement>,
                 data: CheckboxProps,
               ) => {
                 valueSet((data?.value as string) ?? '')

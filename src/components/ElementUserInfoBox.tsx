@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import { useState, useContext } from 'react'
 import { Button, Header, Form, Modal, Select } from 'semantic-ui-react'
 import { userContext } from '../context/user'
 import type { User } from '../context/user'
@@ -11,8 +11,8 @@ const genderOptions = [
 
 function ElementUserInfoBox() {
   const [open, setOpen] = useState(false)
-  const { state, dispach } = useContext(userContext)
-  const [userInfo, setUserInfo] = useState<User | null>(state?.user)
+  const { state } = useContext(userContext)
+  const [userInfo, _] = useState<User | null>(state?.user)
   const [userState, setUserState] = useState({
     inputNumver: 0,
     loginNumber: 0,
@@ -23,11 +23,6 @@ function ElementUserInfoBox() {
 
   const chnageState = (setNumber: number, type: string) => {
     setUserState({ ...userState, [type]: setNumber })
-  }
-
-  const handleChange = (e: Event, value: any) => {
-    console.log(e)
-    console.log(value)
   }
 
   const setUserAction = () => {

@@ -16,9 +16,9 @@ function ContentInputBox(props: Props) {
   const { className } = props
   const [submitConfirm, submitConfirmSet] = useState(false)
 
-  const handleChange = (e: Event, value: string) => {
-    console.log(value)
-  }
+  // const handleChange = (e: Event, value: string) => {
+  //   console.log(value)
+  // }
 
   const handleConfirm = () => {
     submitConfirmSet(false)

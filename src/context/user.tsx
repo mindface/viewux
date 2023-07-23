@@ -35,7 +35,7 @@ const reducer = (state: State, action: Action) => {
   switch (action.type) {
     case 'user/get':
       return state
-    case 'user/get':
+    case 'user/add':
       return { ...state, user: action.user }
     default:
       return state

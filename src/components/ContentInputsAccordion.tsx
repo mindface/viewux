@@ -1,4 +1,3 @@
-import React, { useState } from 'react'
 import { Accordion } from 'semantic-ui-react'
 import UserInfoBox from './ElementUserInfoBox'
 import ContentInputBox01 from './ContentInputBox01'
@@ -24,11 +23,9 @@ const rootPanels = [
 ]
 
 function ContentInputsAccordion() {
-  const [activeTab, activeTabSet] = useState(0)
-
-  const handleChange = (e: Event, value: any) => {
-    console.log(value)
-  }
+  // const handleChange = (e: Event, value: any) => {
+  //   console.log(value)
+  // }
 
   return (
     <div className="content-inputs">

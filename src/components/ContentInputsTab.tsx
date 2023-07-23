@@ -35,10 +35,6 @@ function ContentInputsTab() {
     },
   ]
 
-  const handleChange = (e: Event, value: any) => {
-    console.log(value)
-  }
-
   return (
     <div className="content-inputs">
       <ElementUserInfoBox />

@@ -24,7 +24,7 @@ function Header() {
     <BaseHeader>
       <div className="p-1">
         <List horizontal>
-          <List.Item icon='ordered list' />
+          <List.Item icon="ordered list" />
           {pagelist.map((item, k) => (
             <List.Item
               key={`List.Item${k}`}

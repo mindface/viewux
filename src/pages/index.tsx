@@ -1,4 +1,4 @@
-import ContentInputs from '../components/ContentInputsTab'
+// import ContentInputs from '../components/ContentInputsTab'
 import { Container } from 'semantic-ui-react'
 
 function Index() {
