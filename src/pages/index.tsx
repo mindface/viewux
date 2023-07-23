@@ -1,3 +1,4 @@
+export const runtime = 'edge';
 // import ContentInputs from '../components/ContentInputsTab'
 import { Container } from 'semantic-ui-react'
 

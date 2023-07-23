@@ -1,3 +1,4 @@
+export const runtime = 'edge';
 import ContainerInfoThis from '../components/ContainerInfoThis'
 import { Container } from 'semantic-ui-react'
 function About() {
