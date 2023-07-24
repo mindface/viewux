@@ -18,7 +18,13 @@ function ContainerInfoThis() {
         />
         <Card
           image="/images/formView.png"
-          header="入力フォームのパタン"
+          header="カードの連続性"
+          meta="form"
+          description="現状は3つ(20230722)"
+        />
+        <Card
+          image="/images/formView.png"
+          header="グラフと日付情報の表示"
           meta="form"
           description="現状は3つ(20230722)"
         />

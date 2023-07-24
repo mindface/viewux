@@ -14,7 +14,6 @@ function ContainerForm() {
   const [userInfo, setUserInfo] = useState(state.user)
 
   useEffect(() => {
-    console.log(state)
     setUserInfo(state.user)
   },[inputNumver, loginNumber, totalRunNumber, achievement])
 

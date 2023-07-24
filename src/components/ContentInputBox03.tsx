@@ -49,14 +49,12 @@ function ContentInputBox(props: Props) {
               placeholder="Enter weight..."
             />
           </Form.Group>
-          <Form.Input fluid label="選ぶ理由の共通点" placeholder="First name" />
+          <Form.Input label="選ぶ理由の共通点" placeholder="First name" />
           <Form.TextArea
-            fluid
             label="結果からどうフィードバックするか"
             placeholder=""
           />
           <Form.Select
-            fluid
             label="状況から選ばなればならない優先順"
             options={options}
             placeholder="Gender"
