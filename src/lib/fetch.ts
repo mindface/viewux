@@ -23,16 +23,16 @@ export class FetchAPIs {
     const res = await fetchAction().getAction("/mainInfo.json")
     return res;
   }
-  public async getTaskerInfo(customerId:string) {
-    const res = await fetchAction().getAction("/mainInfo.json")
+  public async getMethods(customerId:string) {
+    const res = await fetchAction().getAction("/methods.json")
     return res;
   }
   public async getTaskProcess(customerId:string) {
     const res = await fetchAction().getAction("/mainInfo.json")
     return res;
   }
-  public async getCompositionMaterials(customerId:string) {
-    const res = await fetchAction().getAction("/mainInfo.json")
+  public async getPlanHistory(customerId:string) {
+    const res = await fetchAction().getAction("/planHistory.json")
     return res;
   }
   public async getSimilarTask(categoryNmae:string) {

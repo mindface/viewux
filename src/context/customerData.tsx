@@ -1,11 +1,36 @@
 import { Dispatch, createContext, useReducer, ReactNode } from 'react'
 
+export interface Planed {
+  id: number;
+  keyId: string;
+  title: string;
+  detailList: {id:string,title:string}[];
+  value: number;
+  category: string;
+  day: string;
+  create_at: string;
+}
+
+export type PlanedList = Planed[]
+
+export interface Method {
+  id: string;
+  title: string;
+  detail: string;
+  relationRunType: string;
+  category: string;
+  create_at: string;
+}
+
+export type MethodList = Method[]
+
 export interface CustomerData {
   id: number
   keyId: string
   title: string
   detail: string
   value: number
+  category: string
   day: string
   create_at: string
 }
@@ -53,6 +78,7 @@ const intalState: State = {
     "title":"none",
     "detail":"none",
     "value": 346,
+    "category":"TOM",
     "day": "200000",
     "create_at": "200000"
   }

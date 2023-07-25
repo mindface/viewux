@@ -10,10 +10,27 @@ body {
   height: auto;
 }
 
+.ui.modal>.content {
+  max-height: 80vh;
+}
+
 /* layout ≒ FLOCSS  */
 
 .link {
   display: inline-block;
+}
+
+.half {
+  max-width: 50%;
+  width: 100%;
+}
+
+.h-half {
+  max-height: 50%;
+}
+
+.max-modal-h {
+  max-height: 80vh;
 }
 
 .max-h70 {

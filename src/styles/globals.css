@@ -27,8 +27,14 @@ body {
 }
 
 .ui.container {
-  min-height: 90vh;
+  min-height: 80vh;
 }
+
+.half .ui.cards {
+  display: block;
+}
+
+
 
 .flex {
   display: flex;
@@ -93,7 +99,9 @@ body {
 }
 .overflow-ysc {
   overflow-y: auto;
+  overflow-x: hidden;
 }
 .overflow-xsc {
+  overflow-y: hidden;
   overflow-x: auto;
 }

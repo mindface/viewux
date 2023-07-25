@@ -1,0 +1,192 @@
+[
+  {
+    "id":1,
+    "keyId": "makeKey01",
+    "title":"プラン情報01",
+    "detailList":[
+      {
+        "id": "plan1Detail01",
+        "title":"title01"
+      },
+      {
+        "id":"plan1Detail02",
+        "title":"title02"
+      }
+    ],
+    "value": 346,
+    "category":"INF",
+    "day": "202307",
+    "create_at": "202301"
+  },
+  {
+    "id":12,
+    "keyId": "makeKey02",
+    "title":"プラン情報02",
+    "detailList":[],
+    "value": 146,
+    "category":"TOW",
+    "day": "202306",
+    "create_at": "202301"
+  },
+  {
+    "id":3,
+    "keyId": "makeKey02",
+    "title":"プラン情報03",
+    "detailList":[
+      {
+        "id": "plan3Detail01",
+        "title":"title01"
+      },
+      {
+        "id":"plan3Detail02",
+        "title":"title02"
+      }
+    ],
+    "value": 286,
+    "day": "202305",
+    "category":"TOW",
+    "create_at": "202301"
+  },
+  {
+    "id":4,
+    "keyId": "makeKey02",
+    "title":"プラン情報04",
+    "detailList":[],
+    "value": 296,
+    "day": "202304",
+    "category":"TOW",
+    "create_at": "202301"
+  },
+  {
+    "id":5,
+    "keyId": "makeKey05",
+    "title":"プラン情報05",
+    "detailList":[
+      {
+        "id": "plan5Detail01",
+        "title":"title01"
+      },
+      {
+        "id":"plan5Detail02",
+        "title":"title02"
+      }],
+    "value": 256,
+    "category":"TOW",
+    "day": "202303",
+    "create_at": "202301"
+  },
+  {
+    "id":6,
+    "keyId": "makeKey02",
+    "title":"プラン情報06",
+    "detailList":[
+      {
+        "id": "plan6Detail01",
+        "title":"title01"
+      },
+      {
+        "id":"plan6Detail02",
+        "title":"title02"
+      }],
+    "value": 266,
+    "category":"TOW",
+    "day": "202302",
+    "create_at": "202301"
+  },
+  {
+    "id":7,
+    "keyId": "makeKey02",
+    "title":"プラン情報07",
+    "detailList":[
+      {
+        "id": "plan7Detail01",
+        "title":"title01"
+      },
+      {
+        "id":"plan7Detail02",
+        "title":"title02"
+      }],
+    "value": 296,
+    "category":"TOW",
+    "day": "202301",
+    "create_at": "202301"
+  },
+  {
+    "id":8,
+    "keyId": "makeKey02",
+    "title":"プラン情報08",
+    "detailList":[
+      {
+        "id": "plan8Detail01",
+        "title":"title01"
+      }],
+    "value": 269,
+    "category":"TOW",
+    "day": "202212",
+    "create_at": "202301"
+  },
+  {
+    "id":9,
+    "keyId": "makeKey09",
+    "title":"プラン情報09",
+    "detailList":[],
+    "value": 321,
+    "category":"TOW",
+    "day": "202211",
+    "create_at": "202301"
+  },
+  {
+    "id":10,
+    "keyId": "makeKey02",
+    "title":"プラン情報10",
+    "detailList":[
+      {
+        "id": "plan10Detail01",
+        "title":"title01"
+      },
+      {
+        "id":"plan10Detail02",
+        "title":"title02"
+      },
+      {
+        "id": "plan10Detail03",
+        "title":"title03"
+      },
+      {
+        "id":"plan10Detail04",
+        "title":"title04"
+      }],
+    "value": 341,
+    "category":"TOW",
+    "day": "202210",
+    "create_at": "202301"
+  },
+  {
+    "id":11,
+    "keyId": "makeKey02",
+    "title":"プラン情報05",
+    "detailList":[],
+    "value": 301,
+    "category":"TOW",
+    "day": "202210",
+    "create_at": "202301"
+  },
+  {
+    "id":12,
+    "keyId": "プラン情報12",
+    "title":"メインのグラフ",
+    "detailList":[
+      {
+        "id": "plan12Detail01",
+        "title":"title01"
+      },
+      {
+        "id":"plan12Detail02",
+        "title":"title02"
+      }],
+    "value": 281,
+    "category":"TOW",
+    "day": "202209",
+    "create_at": "202301"
+  }
+]

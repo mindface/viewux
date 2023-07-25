@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-import { Button, Icon, Image, Modal } from 'semantic-ui-react'
 import { FetchAPIs } from "../lib/fetch";
 import { HelperColor } from "../lib/helper-color";
 import { CustomerDataList } from "../context/customerData";
@@ -15,13 +14,11 @@ function ContainerCustomerView() {
   useEffect(() => {
     (async () => {
       const res = await fetchAPIs.getCustomerData()
-      console.log("ContainerCustomerView///////////////")
       setCustomerList(res)
     })()
   },[])
 
   const setWidthWindow = () => {
-    console.log("setWidthWindow^^^^^^^^^^^")
     const elementWidth = listElement.current?.clientWidth
     if(elementWidth && customerList.length) {
       const itemNumber = elementWidth/customerList.length
