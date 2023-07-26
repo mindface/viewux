@@ -3,25 +3,25 @@ import { Header as BaseHeader, List } from 'semantic-ui-react'
 
 const pagelist = [
   {
-    "id": 1,
-    "name": 'home',
-    "path": '/',
+    id: 1,
+    name: 'home',
+    path: '/',
   },
   {
-    "id": 2,
-    "name": 'about',
-    "path": '/about',
+    id: 2,
+    name: 'about',
+    path: '/about',
   },
   {
-    "id": 3,
-    "name": 'formView',
-    "path": '/formView',
+    id: 3,
+    name: 'formView',
+    path: '/formView',
   },
   {
-    "id": 4,
-    "name": 'customerDataView',
-    "path": '/customerDataView',
-  }
+    id: 4,
+    name: 'customerDataView',
+    path: '/customerDataView',
+  },
 ]
 
 function Header() {

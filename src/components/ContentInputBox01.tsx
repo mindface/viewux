@@ -33,8 +33,8 @@ function ContentInputBox01(props: Props) {
             <Form.Input label="名" placeholder="Last name" />
           </Form.Group>
           <Form.Group widths="equal">
-            <Form.Input  label="職種" placeholder="F" />
-            <Form.Input  label="学習単位" placeholder="Last name" />
+            <Form.Input label="職種" placeholder="F" />
+            <Form.Input label="学習単位" placeholder="Last name" />
             <Form.Select
               label="Gender"
               options={options}

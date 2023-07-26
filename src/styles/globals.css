@@ -34,8 +34,6 @@ body {
   display: block;
 }
 
-
-
 .flex {
   display: flex;
   flex-wrap: wrap;
@@ -70,8 +68,8 @@ body {
   z-index: 1;
   padding: 8px;
   background-color: var(--background-bg-white);
-  box-shadow: 0 5px 10px 0 rgba(0,0,0,0.14);
-  border-radius: 0.28571429rem
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.14);
+  border-radius: 0.28571429rem;
 }
 
 .position-item-c {
@@ -83,7 +81,7 @@ body {
   z-index: 1;
   padding: 8px;
   background-color: var(--background-bg-white);
-  box-shadow: 0 5px 10px 0 rgba(0,0,0,0.14);
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.14);
 }
 
 .hover-view .view {

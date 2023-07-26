@@ -10,7 +10,7 @@ body {
   height: auto;
 }
 
-.ui.modal>.content {
+.ui.modal > .content {
   max-height: 80vh;
 }
 
@@ -20,6 +20,12 @@ body {
   display: inline-block;
 }
 
+.block {
+  display: block;
+}
+.block-ib {
+  display: inline-block;
+}
 .half {
   max-width: 50%;
   width: 100%;
@@ -35,6 +41,9 @@ body {
 
 .max-h70 {
   max-height: 70px;
+}
+.max-h80 {
+  max-height: 80px;
 }
 
 .max-x300 {
@@ -85,4 +94,3 @@ body {
   writing-mode: vertical-rl;
   text-align: center;
 }
-

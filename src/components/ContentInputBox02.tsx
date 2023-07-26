@@ -30,10 +30,7 @@ function ContentInputBox02(props: Props) {
             </Form.Field>
           </Form.Group>
           <Form.Group widths="equal">
-            <Form.Input
-              label="専攻での得意科目"
-              placeholder="First name"
-            />
+            <Form.Input label="専攻での得意科目" placeholder="First name" />
             <Form.Input
               label="科目で扱う情報の最小単位"
               placeholder="情報工学(プログラム言語R,go)"

@@ -1,7 +1,7 @@
 import { useEffect, useState, useContext } from 'react'
 import { Button } from 'semantic-ui-react'
-import { userContext } from "../context/user";
-import type { User } from "../context/user";
+import { userContext } from '../context/user'
+import type { User } from '../context/user'
 
 import ContentInputsAccordion from './ContentInputsAccordion'
 import ContentInputsTab from './ContentInputsTab'
@@ -16,8 +16,7 @@ function ContainerBackendCalc() {
       <div className="user-info-box position-shaft hover-view">
         <Button content="ユーザー情報について" primary />
       </div>
-      <div className="actions pt-1">
-      </div>
+      <div className="actions pt-1"></div>
     </div>
   )
 }

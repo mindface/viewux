@@ -2,21 +2,21 @@
   {
     "id": 1,
     "name": "home",
-    "path": "/",
+    "path": "/"
   },
   {
     "id": 2,
     "name": "about",
-    "path": "/about",
+    "path": "/about"
   },
   {
     "id": 3,
     "name": "formView",
-    "path": "/formView",
+    "path": "/formView"
   },
   {
     "id": 4,
     "name": "customerDataView",
-    "path": "/customerDataView",
+    "path": "/customerDataView"
   }
 ]

@@ -1,25 +1,38 @@
 import { Dispatch, createContext, useReducer, ReactNode } from 'react'
 
 export interface Planed {
-  id: number;
-  keyId: string;
-  title: string;
-  detailList: {id:string,title:string}[];
-  value: number;
-  category: string;
-  day: string;
-  create_at: string;
+  id: number
+  keyId: string
+  title: string
+  detailList: { id: string; title: string }[]
+  value: number
+  category: string
+  assignment?: string
+  day: string
+  create_at: string
 }
 
 export type PlanedList = Planed[]
 
+export interface PlanInfo {
+  id: string
+  title: string
+  resource: string
+  joinNumber: string
+  usedPlanNumber: string
+  status: string
+  create_at: string
+}
+
+export type PlanInfoList = PlanInfo[]
+
 export interface Method {
-  id: string;
-  title: string;
-  detail: string;
-  relationRunType: string;
-  category: string;
-  create_at: string;
+  id: string
+  title: string
+  detail: string
+  relationRunType: string
+  category: string
+  create_at: string
 }
 
 export type MethodList = Method[]
@@ -38,13 +51,13 @@ export interface CustomerData {
 export type CustomerDataList = CustomerData[]
 
 interface State {
-  customerDataList: CustomerDataList;
+  customerDataList: CustomerDataList
   customerData: CustomerData
 }
 
 interface Action {
   type: string
-  customerDataList: CustomerDataList;
+  customerDataList: CustomerDataList
   customerData: CustomerData
 }
 
@@ -73,15 +86,15 @@ const reducer = (state: State, action: Action) => {
 const intalState: State = {
   customerDataList: [],
   customerData: {
-    "id": 12000,
-    "keyId": "none",
-    "title":"none",
-    "detail":"none",
-    "value": 346,
-    "category":"TOM",
-    "day": "200000",
-    "create_at": "200000"
-  }
+    id: 12000,
+    keyId: 'none',
+    title: 'none',
+    detail: 'none',
+    value: 346,
+    category: 'TOM',
+    day: '200000',
+    create_at: '200000',
+  },
 }
 
 export const CustomerDataProvider = (props: Props) => {

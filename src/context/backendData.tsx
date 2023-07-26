@@ -14,13 +14,13 @@ export interface backendData {
 type BackendDataList = backendData[]
 
 interface State {
-  backendDataList: BackendDataList;
+  backendDataList: BackendDataList
   backendData: backendData
 }
 
 interface Action {
   type: string
-  backendDataList: BackendDataList;
+  backendDataList: BackendDataList
   backendData: backendData
 }
 
@@ -50,14 +50,14 @@ const intalState: State = {
   backendDataList: [],
   backendData: {
     id: 12000,
-    name: "",
-    detail:  "",
+    name: '',
+    detail: '',
     inputNumver: 0,
     loginNumber: 0,
     targetRunNumber: 0,
     totalRunNumber: 0,
-    achievement: 0
-  }
+    achievement: 0,
+  },
 }
 
 export const BackendDataProvider = (props: Props) => {

@@ -37,12 +37,12 @@ function ElementUserInfoBox() {
       totalRunNumber: userState.totalRunNumber,
       achievement: userState.achievement,
     }
-    dispach({type:"user/add",user:setItem})
+    dispach({ type: 'user/add', user: setItem })
   }
 
   const tateValue = () => {
-    const rate = (state?.user?.achievement / state?.user?.totalRunNumber)
-    return `${Math.round(rate*100)}%` ?? "none"
+    const rate = state?.user?.achievement / state?.user?.totalRunNumber
+    return `${Math.round(rate * 100)}%` ?? 'none'
   }
 
   return (
@@ -88,7 +88,6 @@ function ElementUserInfoBox() {
                 />
               </Form.Group>
               <Form.Group>
-
                 <Form.Input
                   label="総合実行タスク情報"
                   placeholder="4"
