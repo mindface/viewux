@@ -30,5 +30,5 @@
     "@types/semantic-ui": "^2.2.7",
     "prettier": "^3.0.0"
   },
-  "packageManager": "yarn@3.5.1"
+  "packageManager": "yarn@3.6.1"
 }
