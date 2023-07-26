@@ -1,6 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  box-sizing: border-box;
+}
+
 html,
 body {
   height: auto;
+}
+
+.ui.modal > .content {
+  max-height: 80vh;
 }
 
 /* layout ≒ FLOCSS  */
@@ -9,8 +20,58 @@ body {
   display: inline-block;
 }
 
+.block {
+  display: block;
+}
+.block-ib {
+  display: inline-block;
+}
+.half {
+  max-width: 50%;
+  width: 100%;
+}
+
+.h-half {
+  max-height: 50%;
+}
+
+.max-modal-h {
+  max-height: 80vh;
+}
+
+.max-h70 {
+  max-height: 70px;
+}
+.max-h80 {
+  max-height: 80px;
+}
+
+.max-x300 {
+  max-width: 300px;
+}
+
 .p-1 {
   padding: 8px;
+}
+
+.pt-1 {
+  padding-top: 8px;
+}
+.pb-1 {
+  padding-bottom: 8px;
+}
+.pb-2 {
+  padding-bottom: 16px;
+}
+.pb-4 {
+  padding-bottom: 32px;
+}
+
+.mt-minus-1 {
+  margin-top: -8px;
+}
+.mt-minus-2 {
+  margin-top: -16px;
 }
 
 .mb-1 {

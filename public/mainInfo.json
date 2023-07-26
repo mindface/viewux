@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "keyId": "makeKey01",
+    "title": "メインのグラフ",
+    "detail": "none",
+    "value": 346,
+    "category": "INF",
+    "day": "202307",
+    "create_at": "202301"
+  },
+  {
+    "id": 2,
+    "keyId": "makeKey02",
+    "title": "メインのグラフ",
+    "detail": "調整中での不具合発生",
+    "value": 146,
+    "category": "TOW",
+    "day": "202306",
+    "create_at": "202301"
+  },
+  {
+    "id": 3,
+    "keyId": "makeKey03",
+    "title": "メインのグラフ",
+    "detail": "none",
+    "value": 286,
+    "day": "202305",
+    "category": "TOW",
+    "create_at": "202301"
+  },
+  {
+    "id": 4,
+    "keyId": "makeKey04",
+    "title": "メインのグラフ",
+    "detail": "none",
+    "value": 296,
+    "day": "202304",
+    "category": "TOW",
+    "create_at": "202301"
+  },
+  {
+    "id": 5,
+    "keyId": "makeKey05",
+    "title": "メインのグラフ",
+    "detail": "none",
+    "value": 256,
+    "category": "TOW",
+    "day": "202303",
+    "create_at": "202301"
+  },
+  {
+    "id": 6,
+    "keyId": "makeKey06",
+    "title": "メインのグラフ",
+    "detail": "none",
+    "value": 266,
+    "category": "TOW",
+    "day": "202302",
+    "create_at": "202301"
+  },
+  {
+    "id": 7,
+    "keyId": "makeKey07",
+    "title": "メインのグラフ",
+    "detail": "none",
+    "value": 296,
+    "category": "TOW",
+    "day": "202301",
+    "create_at": "202301"
+  },
+  {
+    "id": 8,
+    "keyId": "makeKey08",
+    "title": "メインのグラフ",
+    "detail": "none",
+    "value": 269,
+    "category": "TOW",
+    "day": "202212",
+    "create_at": "202301"
+  },
+  {
+    "id": 9,
+    "keyId": "makeKey09",
+    "title": "メインのグラフ",
+    "detail": "none",
+    "value": 321,
+    "category": "TOW",
+    "day": "202211",
+    "create_at": "202301"
+  },
+  {
+    "id": 10,
+    "keyId": "makeKey10",
+    "title": "メインのグラフ",
+    "detail": "none",
+    "value": 341,
+    "category": "TOW",
+    "day": "202210",
+    "create_at": "202301"
+  },
+  {
+    "id": 11,
+    "keyId": "makeKey11",
+    "title": "メインのグラフ",
+    "detail": "none",
+    "value": 301,
+    "category": "TOW",
+    "day": "202210",
+    "create_at": "202301"
+  },
+  {
+    "id": 12,
+    "keyId": "makeKey12",
+    "title": "メインのグラフ",
+    "detail": "none",
+    "value": 281,
+    "category": "TOW",
+    "day": "202209",
+    "create_at": "202301"
+  }
+]

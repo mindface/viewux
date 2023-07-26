@@ -17,6 +17,11 @@ const pagelist = [
     name: 'formView',
     path: '/formView',
   },
+  {
+    id: 4,
+    name: 'customerDataView',
+    path: '/customerDataView',
+  },
 ]
 
 function Header() {

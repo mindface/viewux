@@ -1,0 +1,58 @@
+[
+  {
+    "id": "methodNumber01",
+    "title": "methodNumber01",
+    "detail": "methodNumber01",
+    "relationRunType": "検証",
+    "category": "TOW",
+    "create_at": "202301"
+  },
+  {
+    "id": "methodNumber02",
+    "title": "methodNumber02",
+    "detail": "methodNumber02",
+    "relationRunType": "安定",
+    "category": "TOW",
+    "create_at": "202211"
+  },
+  {
+    "id": "methodNumber03",
+    "title": "methodNumber03",
+    "detail": "methodNumber03",
+    "relationRunType": "古い",
+    "category": "TOW",
+    "create_at": "202212"
+  },
+  {
+    "id": "methodNumber04",
+    "title": "methodNumber04",
+    "detail": "methodNumber04",
+    "relationRunType": "在庫問題",
+    "category": "NOW",
+    "create_at": "202301"
+  },
+  {
+    "id": "methodNumber05",
+    "title": "methodNumber05",
+    "detail": "methodNumber05",
+    "relationRunType": "在庫問題",
+    "category": "TOW",
+    "create_at": "202302"
+  },
+  {
+    "id": "methodNumber06",
+    "title": "methodNumber06",
+    "detail": "methodNumber06",
+    "relationRunType": "安定",
+    "category": "NOW",
+    "create_at": "202206"
+  },
+  {
+    "id": "methodNumber07",
+    "title": "methodNumber07",
+    "detail": "methodNumber07",
+    "relationRunType": "安定",
+    "category": "TOW",
+    "create_at": "202206"
+  }
+]

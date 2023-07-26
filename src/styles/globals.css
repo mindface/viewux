@@ -6,6 +6,7 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --background-bg-white: #fff;
 }
 @media (prefers-color-scheme: dark) {
   :root {
@@ -26,5 +27,79 @@ body {
 }
 
 .ui.container {
-  min-height: 90vh;
+  min-height: 80vh;
+}
+
+.half .ui.cards {
+  display: block;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+.flex-sb {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.flex-nowrap {
+  flex-wrap: nowrap;
+}
+.flex-aie {
+  align-items: end;
+}
+
+.text-c {
+  text-align: center;
+}
+.text-r {
+  text-align: right;
+}
+
+.position-shaft {
+  position: relative;
+}
+
+.position-item-bl {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1;
+  padding: 8px;
+  background-color: var(--background-bg-white);
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.14);
+  border-radius: 0.28571429rem;
+}
+
+.position-item-c {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: 1;
+  padding: 8px;
+  background-color: var(--background-bg-white);
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.14);
+}
+
+.hover-view .view {
+  display: none;
+}
+
+.hover-view:hover .view {
+  display: block;
+}
+
+.overflow-hi {
+  overflow: hidden;
+}
+.overflow-ysc {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.overflow-xsc {
+  overflow-y: hidden;
+  overflow-x: auto;
 }

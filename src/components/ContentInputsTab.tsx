@@ -10,7 +10,7 @@ function ContentInputsTab() {
 
   const panes = [
     {
-      menuItem: 'Tab 1',
+      menuItem: 'No 1',
       render: () => (
         <Tab.Pane>
           <ContentInputBox01 statTabAction={(id) => activeTabSet(id)} />
@@ -18,7 +18,7 @@ function ContentInputsTab() {
       ),
     },
     {
-      menuItem: 'Tab 2',
+      menuItem: 'No 2',
       render: () => (
         <Tab.Pane>
           <ContentInputBox02 statTabAction={(id) => activeTabSet(id)} />
@@ -26,7 +26,7 @@ function ContentInputsTab() {
       ),
     },
     {
-      menuItem: 'Tab 3',
+      menuItem: 'No 3',
       render: () => (
         <Tab.Pane>
           <ContentInputBox03 />

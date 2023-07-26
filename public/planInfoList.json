@@ -1,0 +1,29 @@
+[
+  {
+    "id": "similarPlan01",
+    "title": "titleSimilarPlan01",
+    "resource": "HGD [ツール規格]",
+    "joinNumber": "9",
+    "usedPlanNumber": "12",
+    "status": "run",
+    "create_at": "20230115"
+  },
+  {
+    "id": "similarPlan02",
+    "title": "titleSimilarPlan01",
+    "resource": "FBGD [ツール規格]",
+    "joinNumber": "5",
+    "usedPlanNumber": "22",
+    "status": "end",
+    "create_at": "20221215"
+  },
+  {
+    "id": "similarPlan03",
+    "title": "titleSimilarPlan01",
+    "resource": "HGD [ツール規格]",
+    "joinNumber": "12",
+    "usedPlanNumber": "19",
+    "status": "run",
+    "create_at": "20230105"
+  }
+]

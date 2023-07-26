@@ -1,5 +1,5 @@
 import { Accordion } from 'semantic-ui-react'
-import UserInfoBox from './ElementUserInfoBox'
+import ElementUserInfoBox from './ElementUserInfoBox'
 import ContentInputBox01 from './ContentInputBox01'
 import ContentInputBox02 from './ContentInputBox02'
 import ContentInputBox03 from './ContentInputBox03'
@@ -29,7 +29,7 @@ function ContentInputsAccordion() {
 
   return (
     <div className="content-inputs">
-      <UserInfoBox />
+      <ElementUserInfoBox />
       <Accordion defaultActiveIndex={0} panels={rootPanels} styled />
     </div>
   )
