@@ -1,12 +1,14 @@
-import { useState, useRef, ChangeEvent, ReactNode } from 'react'
+import { useState, useRef, ChangeEvent, useContext } from 'react'
 import { Input, Button, List } from 'semantic-ui-react'
 import { makeFileList, makeFile } from '../context/makeFiles'
 import { HelperFile } from '../lib/helper-file'
+import { makeFileContext } from "../context/makeFiles";
 import html2canvas from 'html2canvas'
 
 const helperFile = new HelperFile()
 const videoWidth = 560
 function MakerFlowImage() {
+  const { state, dispach } = useContext(makeFileContext)
   const [vertical, verticalSet] = useState(true)
   const [fileName, fileNameSet] = useState('')
   const [imageFiles, imageFilesSet] = useState<makeFileList>([])
@@ -17,40 +19,40 @@ function MakerFlowImage() {
   const video = useRef<HTMLVideoElement>(null)
   const canvas = useRef<HTMLCanvasElement>(null)
 
-  const makeImageAction = () => {
-    ;(async () => {
-      const base64data = canvas.current?.toDataURL('image/png') ?? ''
-      const formData = new FormData()
-      if (!base64data) return
-      const fileData = helperFile.createBaseFileBase64(
-        base64data,
-        fileName,
-        'png',
-      )
+  // const makeImageAction = () => {
+  //   ;(async () => {
+  //     const base64data = canvas.current?.toDataURL('image/png') ?? ''
+  //     const formData = new FormData()
+  //     if (!base64data) return
+  //     const fileData = helperFile.createBaseFileBase64(
+  //       base64data,
+  //       fileName,
+  //       'png',
+  //     )
 
-      formData.append('file', fileData as Blob)
-      formData.append('fileName', 'name')
+  //     formData.append('file', fileData as Blob)
+  //     formData.append('fileName', 'name')
 
-      // const config = {
-      //   method: "POST",
-      //   headers: {
-      //     // "Content-Type": "application/json"
-      //     // "Content-Type": "multipart/form-data"
-      //   },
-      //   body: formData
-      // }
-      // try {
-      //   const res = await fetch(`${url}/upload`,config)
-      //   res.json().then((res) => {
-      //     console.log(res);
-      //     makeImagesSet([...makeImages,{id:makeImages.length+1,path:res.uploadedFileName}])
-      //     alert("アップロードに成功しました。")
-      //   })
-      // } catch (error) {
-      //   console.error(error)
-      // }
-    })()
-  }
+  //     const config = {
+  //       method: "POST",
+  //       headers: {
+  //         // "Content-Type": "application/json"
+  //         // "Content-Type": "multipart/form-data"
+  //       },
+  //       body: formData
+  //     }
+  //     try {
+  //       const res = await fetch(`${url}/upload`,config)
+  //       res.json().then((res) => {
+  //         console.log(res);
+  //         makeImagesSet([...makeImages,{id:makeImages.length+1,path:res.uploadedFileName}])
+  //         alert("アップロードに成功しました。")
+  //       })
+  //     } catch (error) {
+  //       console.error(error)
+  //     }
+  //   })()
+  // }
 
   const setFileOnMovie = (files: File[]) => {
     if (!files) return
@@ -116,23 +118,14 @@ function MakerFlowImage() {
     a.remove()
   }
 
-  const copyAction = (path: string) => {
-    let copyText = `/uploads/${path}`
-    // copyText += `${item.title}\n \n ${item.date}\n \n`
-    navigator.clipboard.writeText(copyText)
+  const setFileContextAction = () => {
+    dispach({type: 'makeFile/set', makeFileList:[...state.makeFileList,...imageFiles]})
   }
 
   return (
     <div className="maker-flow-image">
       <div className="struct-pack">
         <div className="field">
-          <input
-            type="text"
-            value={fileName}
-            onChange={(e: ChangeEvent<HTMLInputElement>) => {
-              fileNameSet(e.target.value ?? '')
-            }}
-          />
           <p>
             <input
               type="file"
@@ -148,9 +141,9 @@ function MakerFlowImage() {
             （動画のみ）
           </p>
         </div>
-        <div className="field">
+        <div className="field position-shaft">
           <video controls className="video" ref={video} width={videoWidth} />
-          <canvas ref={canvas} className="canvas" />
+          <canvas ref={canvas} className="canvas position-hide" />
         </div>
         <div className="field">
           <List divided relaxed>
@@ -182,16 +175,15 @@ function MakerFlowImage() {
                 {vertical ? '横' : '縦'}
               </Button>
               <Button onClick={addCanvasForImageAction}>イメージ化</Button>
-              <Button onClick={totalImageDownLoadAction}>
-                トータルイメージを作成
-              </Button>
+              <Button onClick={totalImageDownLoadAction}>トータルイメージ化</Button>
+              <Button onClick={setFileContextAction}>選択した画像のセット</Button>
             </List.Item>
           </List>
         </div>
         <div className="field">
-          <button className="btn" onClick={makeImageAction}>
+          {/* <button className="btn" onClick={makeImageAction}>
             現在の画像をアップロード{imageFiles.length * Math.floor(videoWdith)}
-          </button>
+          </button> */}
         </div>
         <div className="field overflow-xsc">
           <div
@@ -199,7 +191,7 @@ function MakerFlowImage() {
             className={vertical ? 'image-out-put' : 'image-out-put flex'}
             style={{
               width: vertical
-                ? ''
+                ? 'auto'
                 : `${imageFiles.length * Math.floor(videoWdith)}px`,
             }}
           >
@@ -221,7 +213,6 @@ function MakerFlowImage() {
               </div>
             ))}
           </div>
-          auto
         </div>
       </div>
     </div>

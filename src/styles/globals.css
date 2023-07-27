@@ -84,6 +84,13 @@ body {
   box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.14);
 }
 
+.position-hide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
 .hover-view .view {
   display: none;
 }
@@ -103,3 +110,5 @@ body {
   overflow-y: hidden;
   overflow-x: auto;
 }
+
+

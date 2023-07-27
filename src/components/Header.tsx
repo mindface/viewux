@@ -27,6 +27,11 @@ const pagelist = [
     name: 'makeFlowImage',
     path: '/makeFlowImage',
   },
+  {
+    id: 4,
+    name: 'makeSolidTorusImage',
+    path: '/makeSolidTorusImage',
+  },
 ]
 
 function Header() {
