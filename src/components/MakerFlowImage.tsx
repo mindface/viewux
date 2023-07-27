@@ -63,7 +63,7 @@ function MakerFlowImage() {
       const ctx = canvas.current?.getContext('2d')
       const w = video.current?.clientWidth
       const h = video.current?.clientHeight
-      videoWdithSet(w)
+      videoWdithSet(w ?? 0)
       if (w && h) {
         const rtio = h / w
         canvas.current!.width = w
