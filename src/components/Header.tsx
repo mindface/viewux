@@ -22,6 +22,11 @@ const pagelist = [
     name: 'customerDataView',
     path: '/customerDataView',
   },
+  {
+    id: 4,
+    name: 'makeFlowImage',
+    path: '/makeFlowImage',
+  },
 ]
 
 function Header() {
