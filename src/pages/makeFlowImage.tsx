@@ -1,14 +1,16 @@
-import ContainerBackendCalc from '../components/ContainerBackendCalc'
-import { BackendDataProvider } from '../context/backendData'
+// import ContentInputs from '../components/ContentInputsTab'
 import { Container } from 'semantic-ui-react'
-function Backend() {
+import { MakeFileProvider } from '../context/makeFiles'
+import MakerFlowImage from '../components/MakerFlowImage'
+
+function MakeFlowImage() {
   return (
     <Container>
-      <BackendDataProvider>
-        <ContainerBackendCalc />
-      </BackendDataProvider>
+      <MakeFileProvider>
+        <MakerFlowImage />
+      </MakeFileProvider>
     </Container>
   )
 }
 
-export default Backend
+export default MakeFlowImage
