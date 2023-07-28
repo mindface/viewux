@@ -6,7 +6,6 @@ import {
   Card,
   Modal,
   Icon,
-  Popup,
 } from 'semantic-ui-react'
 import {
   CustomerData,

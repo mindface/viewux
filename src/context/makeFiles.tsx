@@ -18,7 +18,7 @@ interface State {
 interface Action {
   type: string
   makeFileList: makeFileList
-  selectFile: makeFile
+  selectFile?: makeFile
 }
 
 interface Props {
@@ -36,8 +36,8 @@ const reducer = (state: State, action: Action) => {
   switch (action.type) {
     case 'makeFile/get':
       return state
-    case 'makeFile/add':
-      return { ...state, user: action.selectFile }
+    case 'makeFile/set':
+      return { ...state, makeFileList: action.makeFileList }
     default:
       return state
   }
