@@ -4,7 +4,10 @@ import {
   Button,
   Header,
   Modal,
-  Select
+  Select,
+  Card,
+  Icon,
+  Image
 } from 'semantic-ui-react'
 import { fabric } from 'fabric'
 import { makeFileContext } from "../context/makeFiles";
@@ -17,8 +20,12 @@ const countryOptions = [
 function MakerSolidTorus() {
   const { state } = useContext(makeFileContext)
   const [fileList, fileListSet] = useState(state.makeFileList ?? [])
+  const [imageViewType, setImageViewType] = useState('')
   const [addText, setAddText] = useState('')
   const [imagePath, setImagePath] = useState('')
+  const [putColor, setPutColor] = useState('#333')
+  const [viewCnanvasWidth,viewCnanvasWidthSet] = useState(0)
+  const [viewCnanvasHeight,viewCnanvasWidthHeight] = useState(0)
   const [renderRates, setRenderRates] = useState<
     { id: number; rate: string }[]
   >([])
@@ -36,7 +43,7 @@ function MakerSolidTorus() {
       left: 55,
       top: 30,
       fontFamily: 'helvetica',
-      fill: '#f55',
+      fill: putColor,
       angle: 0,
     })
     fabricCanvas.add(text)
@@ -48,7 +55,7 @@ function MakerSolidTorus() {
       height: 100,
       top: 10,
       left: 10,
-      fill: 'rgba(255,0,0,0.5)',
+      fill: putColor,
     })
     fabricCanvas.add(rect)
   }
@@ -56,19 +63,23 @@ function MakerSolidTorus() {
   const addCircleAction = () => {
     const circle = new fabric.Circle({
       radius: 30,
-      fill: '#f55',
+      fill: putColor,
       top: 100,
       left: 100,
     })
     fabricCanvas.add(circle)
   }
 
-  const addImageAction = (imgSrc?:string) => {
+  const addImageAction = (imgSrc?:string,x?:number,y?:number) => {
     const imgPath = imgSrc ? imgSrc : imagePath;
+    console.log("x",x)
+    console.log("y",y)
     fabric.Image.fromURL(
       imgPath,
       function (img: any) {
         img.crossOrigin = 'Anonymous'
+        img.top = x ? x : 10
+        img.left = y ? y : 10
         fabricCanvas.add(img)
       },
       { crossOrigin: 'anonymous' },
@@ -95,17 +106,44 @@ function MakerSolidTorus() {
   }
 
   const addMovieImage = () => {
-    console.log(state.makeFileList)
-    state.makeFileList.forEach((file) => {
-      addImageAction(file.imgSrc)
+    const makeFileList = state.makeFileList
+    const cx = viewCnanvasWidth/3
+    const cy = viewCnanvasHeight/3
+    makeFileList.forEach((file,index) => {
+      const angle = (Math.PI*2/makeFileList?.length) * index
+
+      if( imageViewType === "circle" ){
+        const x = Math.floor(cx + 200 * Math.cos(angle))
+        const y = Math.floor(cy + 200 * Math.sin(angle))
+        addImageAction(file.imgSrc,x,y)
+      }else if( imageViewType === "order" ){
+        addImageAction(file.imgSrc,10,index*300)
+      }else{
+        addImageAction(file.imgSrc)
+      }
     })
     setOpen(false)
   }
 
+  const deleteItemAction = () => {
+    if(writeCanvas.current) {
+      const objects = fabricCanvas?.getActiveObjects()
+      if(objects) {
+        objects.forEach((obj) => {
+          fabricCanvas.remove(obj)
+        })
+      }else {
+        alert("選択されていません")
+      }
+    }
+  }
+
   useEffect(() => {
     const containerDom = document.querySelector(".ui.container.make-flow-image") as HTMLDivElement
-    const w = containerDom.clientWidth !== 0 ? containerDom.clientWidth : 700;
+    const w = containerDom?.clientWidth !== 0 ? containerDom?.clientWidth : 700;
     const h = window?.innerHeight/0.6;
+    viewCnanvasWidthSet(w)
+    viewCnanvasWidthHeight(h)
     const fabricCanvas = new fabric.Canvas("canvas", {
       renderOnAddRemove: true,
       width: w,
@@ -133,17 +171,34 @@ function MakerSolidTorus() {
           <Modal.Content image scrolling>
             <Modal.Description>
               <Header as="h4">これらの画像でイメージ情報をサンプリングします</Header>
-               {fileList.map((file,k) => <div key={`file${k}`}><span>{file.name}</span><img src={file.imgSrc} /></div>)}
+              <div className="flex">
+               {fileList.map((file,k) => <div key={`file${k}`}>
+                  <Card>
+                    <Image src={file.imgSrc} wrapped ui={false} />
+                    <Card.Content>
+                      <Card.Header>{file.name}</Card.Header>
+                      <Card.Description>
+                        {file.detail}
+                      </Card.Description>
+                    </Card.Content>
+                    <Card.Content extra>
+                      <Button onClick={() => addImageAction(file.imgSrc,20,20)}>追加します</Button>
+                    </Card.Content>
+                  </Card>
+              </div>)}
+              </div>
             </Modal.Description>
-            <Modal.Actions>
-              
-            </Modal.Actions>
           </Modal.Content>
           <Modal.Actions>
+            <Button onClick={() => setOpen(false)}>閉じる</Button>
             <Button onClick={addMovieImage}>画像を追加</Button>
           </Modal.Actions>
         </Modal>
-        <Select placeholder='描画タイプを選んでください' options={countryOptions} />
+        <Select
+          placeholder='描画タイプを選んでください'
+          options={countryOptions}
+          onChange={(e,data) => setImageViewType(data.value as string)}
+        />
       </div>
       <div className="fields p-2">
         <div className="field pb-1">{totalRenderRates()}</div>
@@ -151,6 +206,7 @@ function MakerSolidTorus() {
           <div className="btn-action">
             <span className="action-box">
               <Input
+                placeholder="画像のurlを入力して右のボタンを押します"
                 value={imagePath}
                 onChange={(e) => setImagePath(e.target.value)}
               />
@@ -166,6 +222,14 @@ function MakerSolidTorus() {
             </span>
             <Button onClick={() => addRectAction()} >add rect</Button>
             <Button onClick={() => addCircleAction()} >add circle</Button>
+            <Input
+              type='color'
+              value={putColor}
+              onChange={(e,data) => {
+                setPutColor(data.value)
+              }}
+            />
+            <Button onClick={() => deleteItemAction()} >select delete</Button>
           </div>
         </div>
         <div className="field">

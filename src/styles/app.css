@@ -20,6 +20,10 @@ body {
   display: inline-block;
 }
 
+.ui.input>input[type='color'] {
+  padding: 5px;
+}
+
 .block {
   display: block;
 }
