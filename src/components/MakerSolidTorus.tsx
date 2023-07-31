@@ -6,7 +6,6 @@ import {
   Modal,
   Select,
   Card,
-  Icon,
   Image
 } from 'semantic-ui-react'
 import { fabric } from 'fabric'
@@ -190,7 +189,7 @@ function MakerSolidTorus() {
             </Modal.Description>
           </Modal.Content>
           <Modal.Actions>
-            <Button onClick={() => setOpen(false)}>閉じる</Button>
+            <Button onClick={() =>  setOpen(false)}>閉じる</Button>
             <Button onClick={addMovieImage}>画像を追加</Button>
           </Modal.Actions>
         </Modal>

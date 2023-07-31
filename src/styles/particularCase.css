@@ -32,4 +32,6 @@
   visibility:visible;
 }
 
-
+.content-categoze .file-output {
+  max-width: 340px;
+}

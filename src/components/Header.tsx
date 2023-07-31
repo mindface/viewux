@@ -23,15 +23,15 @@ const pagelist = [
     path: '/customerDataView',
   },
   {
-    id: 4,
+    id: 5,
     name: 'makeFlowImage',
     path: '/makeFlowImage',
   },
   {
-    id: 4,
-    name: 'makeSolidTorusImage',
-    path: '/makeSolidTorusImage',
-  },
+    id: 6,
+    name: 'tensorflowDraft',
+    path: '/tensorflowDraft',
+  }
 ]
 
 function Header() {

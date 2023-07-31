@@ -20,6 +20,11 @@ body {
   display: inline-block;
 }
 
+img {
+  max-width: 100%;
+  object-fit: cover;
+}
+
 .ui.input>input[type='color'] {
   padding: 5px;
 }

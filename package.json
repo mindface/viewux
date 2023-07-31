@@ -10,6 +10,9 @@
   },
   "dependencies": {
     "@fluentui/react-component-ref": "latest",
+    "@tensorflow-models/mobilenet": "^2.1.0",
+    "@tensorflow/tfjs": "^4.9.0",
+    "@tensorflow/tfjs-backend-webgl": "^4.9.0",
     "@types/node": "20.4.2",
     "@types/react": "18.2.15",
     "@types/react-dom": "18.2.7",
@@ -20,6 +23,8 @@
     "mini-css-extract-plugin": "^2.7.6",
     "next": "13.4.10",
     "postcss": "8.4.26",
+    "postcss-import": "^15.1.0",
+    "postcss-nested": "^6.0.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "semantic-ui-css": "^2.5.0",
