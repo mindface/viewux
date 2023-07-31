@@ -21,7 +21,7 @@ export default function Opencv() {
   const runGun = (cv:any) => {
      (async () => {
       // const { default: cv } = await import('../lib/opencv.js');
-      let img = await loadImage('/images/formView.png');
+      let _img = await loadImage('/images/formView.png');
       let ctx = canvasRef.current?.getContext('2d');
 
       console.log(inputFile)
@@ -29,7 +29,7 @@ export default function Opencv() {
       
       if (ctx && inputFile) {
         let img = new Image();
-        img.src = URL.createObjectURL(img);
+        // img.src = URL.createObjectURL(_img);
         img.onload = function () {
           if (canvasRef.current) {
             canvasRef.current.setAttribute('width', String(img.width));
@@ -60,7 +60,7 @@ export default function Opencv() {
       <canvas className="canvas" ref={canvasRef}></canvas>
       <script async src="/js/opencv.js" onLoad={() => {
             // console.log(cv)
-            runGun(cv)
+            // runGun(cv)
           }
         }></script>---------------------
         {/* <button onClick={runGun}>run</button> */}

@@ -7,12 +7,12 @@ export function openCv() {
   useEffect(() => {
       if (isReady) {
           // OpenCV.jsが準備できたら画像処理を行う
-          let src = cv.imread('imageCanvas');
-          let dst = new cv.Mat();
-          cv.cvtColor(src, dst, cv.COLOR_RGBA2GRAY);
-          cv.imshow('outputCanvas', dst);
-          src.delete();
-          dst.delete();
+        //   let src = cv.imread('imageCanvas');
+        //   let dst = new cv.Mat();
+        //   cv.cvtColor(src, dst, cv.COLOR_RGBA2GRAY);
+        //   cv.imshow('outputCanvas', dst);
+        //   src.delete();
+        //   dst.delete();
       }
   }, [isReady]);
 
