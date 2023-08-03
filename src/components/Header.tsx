@@ -31,6 +31,16 @@ const pagelist = [
     id: 6,
     name: 'tensorflowDraft',
     path: '/tensorflowDraft',
+  },
+  {
+    id: 7,
+    name: 'boxtooler',
+    path: '/boxtooler',
+  },
+  {
+    id: 99,
+    name: 'backend',
+    path: '/backend',
   }
 ]
 
