@@ -7,6 +7,8 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
   --background-bg-white: #fff;
+  --color-white: #fff;
+  --border-sub-rgb: rgb(128, 161, 243);
 }
 @media (prefers-color-scheme: dark) {
   :root {
@@ -110,5 +112,3 @@ body {
   overflow-y: hidden;
   overflow-x: auto;
 }
-
-

@@ -6,10 +6,10 @@ import {
   Modal,
   Select,
   Card,
-  Image
+  Image,
 } from 'semantic-ui-react'
 import { fabric } from 'fabric'
-import { makeFileContext } from "../context/makeFiles";
+import { makeFileContext } from '../context/makeFiles'
 
 const countryOptions = [
   { key: 'select01', value: 'circle', text: '円' },
@@ -23,8 +23,8 @@ function MakerSolidTorus() {
   const [addText, setAddText] = useState('')
   const [imagePath, setImagePath] = useState('')
   const [putColor, setPutColor] = useState('#333')
-  const [viewCnanvasWidth,viewCnanvasWidthSet] = useState(0)
-  const [viewCnanvasHeight,viewCnanvasWidthHeight] = useState(0)
+  const [viewCnanvasWidth, viewCnanvasWidthSet] = useState(0)
+  const [viewCnanvasHeight, viewCnanvasWidthHeight] = useState(0)
   const [renderRates, setRenderRates] = useState<
     { id: number; rate: string }[]
   >([])
@@ -35,7 +35,7 @@ function MakerSolidTorus() {
 
   useMemo(() => {
     fileListSet(state.makeFileList)
-  },[state.makeFileList])
+  }, [state.makeFileList])
 
   const addTextAction = () => {
     const text = new fabric.IText(addText, {
@@ -69,10 +69,10 @@ function MakerSolidTorus() {
     fabricCanvas.add(circle)
   }
 
-  const addImageAction = (imgSrc?:string,x?:number,y?:number) => {
-    const imgPath = imgSrc ? imgSrc : imagePath;
-    console.log("x",x)
-    console.log("y",y)
+  const addImageAction = (imgSrc?: string, x?: number, y?: number) => {
+    const imgPath = imgSrc ? imgSrc : imagePath
+    console.log('x', x)
+    console.log('y', y)
     fabric.Image.fromURL(
       imgPath,
       function (img: any) {
@@ -106,18 +106,18 @@ function MakerSolidTorus() {
 
   const addMovieImage = () => {
     const makeFileList = state.makeFileList
-    const cx = viewCnanvasWidth/3
-    const cy = viewCnanvasHeight/3
-    makeFileList.forEach((file,index) => {
-      const angle = (Math.PI*2/makeFileList?.length) * index
+    const cx = viewCnanvasWidth / 3
+    const cy = viewCnanvasHeight / 3
+    makeFileList.forEach((file, index) => {
+      const angle = ((Math.PI * 2) / makeFileList?.length) * index
 
-      if( imageViewType === "circle" ){
+      if (imageViewType === 'circle') {
         const x = Math.floor(cx + 200 * Math.cos(angle))
         const y = Math.floor(cy + 200 * Math.sin(angle))
-        addImageAction(file.imgSrc,x,y)
-      }else if( imageViewType === "order" ){
-        addImageAction(file.imgSrc,10,index*300)
-      }else{
+        addImageAction(file.imgSrc, x, y)
+      } else if (imageViewType === 'order') {
+        addImageAction(file.imgSrc, 10, index * 300)
+      } else {
         addImageAction(file.imgSrc)
       }
     })
@@ -125,37 +125,39 @@ function MakerSolidTorus() {
   }
 
   const deleteItemAction = () => {
-    if(writeCanvas.current) {
+    if (writeCanvas.current) {
       const objects = fabricCanvas?.getActiveObjects()
-      if(objects) {
+      if (objects) {
         objects.forEach((obj) => {
           fabricCanvas.remove(obj)
         })
-      }else {
-        alert("選択されていません")
+      } else {
+        alert('選択されていません')
       }
     }
   }
 
   useEffect(() => {
-    const containerDom = document.querySelector(".ui.container.make-flow-image") as HTMLDivElement
-    const w = containerDom?.clientWidth !== 0 ? containerDom?.clientWidth : 700;
-    const h = window?.innerHeight/0.6;
+    const containerDom = document.querySelector(
+      '.ui.container.make-flow-image',
+    ) as HTMLDivElement
+    const w = containerDom?.clientWidth !== 0 ? containerDom?.clientWidth : 700
+    const h = window?.innerHeight / 0.6
     viewCnanvasWidthSet(w)
     viewCnanvasWidthHeight(h)
-    const fabricCanvas = new fabric.Canvas("canvas", {
+    const fabricCanvas = new fabric.Canvas('canvas', {
       renderOnAddRemove: true,
       width: w,
       height: h,
-    });
-    setFabricCanvas(fabricCanvas);
-    fabricCanvas.selection = true;
-    const list = [];
+    })
+    setFabricCanvas(fabricCanvas)
+    fabricCanvas.selection = true
+    const list = []
     // for (let index = 0; index < makeComparisons.length; index++) {
     //   list.push({ id: index, rate: "0" });
     // }
     // setRenderRates(list);
-  }, []);
+  }, [])
 
   return (
     <div className="content">
@@ -169,34 +171,40 @@ function MakerSolidTorus() {
           <Modal.Header>作成した画像から選んでください</Modal.Header>
           <Modal.Content image scrolling>
             <Modal.Description>
-              <Header as="h4">これらの画像でイメージ情報をサンプリングします</Header>
+              <Header as="h4">
+                これらの画像でイメージ情報をサンプリングします
+              </Header>
               <div className="flex">
-               {fileList.map((file,k) => <div key={`file${k}`}>
-                  <Card>
-                    <Image src={file.imgSrc} wrapped ui={false} />
-                    <Card.Content>
-                      <Card.Header>{file.name}</Card.Header>
-                      <Card.Description>
-                        {file.detail}
-                      </Card.Description>
-                    </Card.Content>
-                    <Card.Content extra>
-                      <Button onClick={() => addImageAction(file.imgSrc,20,20)}>追加します</Button>
-                    </Card.Content>
-                  </Card>
-              </div>)}
+                {fileList.map((file, k) => (
+                  <div key={`file${k}`}>
+                    <Card>
+                      <Image src={file.imgSrc} wrapped ui={false} />
+                      <Card.Content>
+                        <Card.Header>{file.name}</Card.Header>
+                        <Card.Description>{file.detail}</Card.Description>
+                      </Card.Content>
+                      <Card.Content extra>
+                        <Button
+                          onClick={() => addImageAction(file.imgSrc, 20, 20)}
+                        >
+                          追加します
+                        </Button>
+                      </Card.Content>
+                    </Card>
+                  </div>
+                ))}
               </div>
             </Modal.Description>
           </Modal.Content>
           <Modal.Actions>
-            <Button onClick={() =>  setOpen(false)}>閉じる</Button>
+            <Button onClick={() => setOpen(false)}>閉じる</Button>
             <Button onClick={addMovieImage}>画像を追加</Button>
           </Modal.Actions>
         </Modal>
         <Select
-          placeholder='描画タイプを選んでください'
+          placeholder="描画タイプを選んでください"
           options={countryOptions}
-          onChange={(e,data) => setImageViewType(data.value as string)}
+          onChange={(e, data) => setImageViewType(data.value as string)}
         />
       </div>
       <div className="fields p-2">
@@ -219,25 +227,25 @@ function MakerSolidTorus() {
               />
               <Button onClick={addTextAction}>add text</Button>
             </span>
-            <Button onClick={() => addRectAction()} >add rect</Button>
-            <Button onClick={() => addCircleAction()} >add circle</Button>
+            <Button onClick={() => addRectAction()}>add rect</Button>
+            <Button onClick={() => addCircleAction()}>add circle</Button>
             <Input
-              type='color'
+              type="color"
               value={putColor}
-              onChange={(e,data) => {
+              onChange={(e, data) => {
                 setPutColor(data.value)
               }}
             />
-            <Button onClick={() => deleteItemAction()} >select delete</Button>
+            <Button onClick={() => deleteItemAction()}>select delete</Button>
           </div>
         </div>
         <div className="field">
-        <div className="write-img flex" ref={writeCanvasContent}>
-          <canvas
-            id="canvas"
-            className="write-canvas"
-            ref={writeCanvas}
-          ></canvas>
+          <div className="write-img flex" ref={writeCanvasContent}>
+            <canvas
+              id="canvas"
+              className="write-canvas"
+              ref={writeCanvas}
+            ></canvas>
           </div>
         </div>
         <Button onClick={() => imgDownload()}>imgDownload</Button>

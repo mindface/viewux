@@ -1,4 +1,4 @@
-import ContentCategoze from "./ContentCategoze";
+import ContentCategoze from './ContentCategoze'
 function ContainerCategoze() {
   return (
     <div className="container-categoze">
@@ -6,5 +6,5 @@ function ContainerCategoze() {
     </div>
   )
 }
-  
+
 export default ContainerCategoze

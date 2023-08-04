@@ -25,7 +25,18 @@ img {
   object-fit: cover;
 }
 
-.ui.input>input[type='color'] {
+.file-input {
+  display: inline-block;
+  padding: 8px;
+  background-color: var(--border-sub-rgb);
+  color: var(--color-white);
+  cursor: pointer;
+}
+.file-input input {
+  display: none;
+}
+
+.ui.input > input[type='color'] {
   padding: 5px;
 }
 

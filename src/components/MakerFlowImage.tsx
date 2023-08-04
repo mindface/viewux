@@ -2,7 +2,7 @@ import { useState, useRef, ChangeEvent, useContext } from 'react'
 import { Input, Button, List } from 'semantic-ui-react'
 import { makeFileList, makeFile } from '../context/makeFiles'
 import { HelperFile } from '../lib/helper-file'
-import { makeFileContext } from "../context/makeFiles";
+import { makeFileContext } from '../context/makeFiles'
 import html2canvas from 'html2canvas'
 
 const helperFile = new HelperFile()
@@ -119,7 +119,10 @@ function MakerFlowImage() {
   }
 
   const setFileContextAction = () => {
-    dispach({type: 'makeFile/set', makeFileList:[...state.makeFileList,...imageFiles]})
+    dispach({
+      type: 'makeFile/set',
+      makeFileList: [...state.makeFileList, ...imageFiles],
+    })
   }
 
   return (
@@ -175,8 +178,12 @@ function MakerFlowImage() {
                 {vertical ? '横' : '縦'}
               </Button>
               <Button onClick={addCanvasForImageAction}>イメージ化</Button>
-              <Button onClick={totalImageDownLoadAction}>トータルイメージ化</Button>
-              <Button onClick={setFileContextAction}>選択した画像のセット</Button>
+              <Button onClick={totalImageDownLoadAction}>
+                トータルイメージ化
+              </Button>
+              <Button onClick={setFileContextAction}>
+                選択した画像のセット
+              </Button>
             </List.Item>
           </List>
         </div>

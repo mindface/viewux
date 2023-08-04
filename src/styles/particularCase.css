@@ -1,19 +1,18 @@
-
 .maker-flow-image .camnvas {
   z-index: 0;
-
-
-.write-img > .canvas-container > .canvas-container > .upper-canvas {
-  position: relative;
-  z-index: 12;
-}}
+}
 
 .write-img > .canvas-container > .canvas-container > .upper-canvas {
   position: relative;
   z-index: 12;
 }
 
-.maker-flow-image  .video {
+.write-img > .canvas-container > .canvas-container > .upper-canvas {
+  position: relative;
+  z-index: 12;
+}
+
+.maker-flow-image .video {
   position: relative;
   z-index: 13;
 }
@@ -29,9 +28,61 @@
 .make-flow-image .tab-content.view {
   position: relative;
   z-index: 10;
-  visibility:visible;
+  visibility: visible;
 }
 
 .content-categoze .file-output {
   max-width: 340px;
+}
+
+.content-boxs .box-list {
+  padding: 8px;
+  border-bottom: 1px solid var(--border-sub-rgb);
+}
+
+.content-boxs .box-item {
+  position: relative;
+  margin: 0 0 8px;
+  padding: 8px;
+  border: 1px solid var(--border-sub-rgb);
+}
+
+.content-boxs .box-item .actions {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+.content-boxs .box-item:hover .actions {
+  display: block;
+}
+
+.content-boxs .side-info {
+  padding: 8px;
+  border: 1px solid #41bcb6;
+  color: #41bcb6;
+}
+
+.content-boxs .vertical-list {
+  margin: 0 0 8px;
+  color: var(--color-white);
+}
+
+.content-boxs .vertical-item:nth-child(odd) {
+  background-color: #46a5c4;
+}
+.content-boxs .vertical-item:nth-child(even) {
+  background-color: #448ac0;
+}
+.content-boxs .vertical-item {
+  margin: 0 0 8px;
+  padding: 8px;
+}
+
+.content-boxs .tag {
+  display: inline-block;
+  padding: 2px;
+  background-color: #46a5c4;
+  color: var(--color-white);
 }
