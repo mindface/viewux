@@ -1,5 +1,9 @@
 import { Form, Button, Input, Header, Select } from 'semantic-ui-react'
-import { useState, ChangeEvent, useMemo } from "react";
+import { useState, useRef, ChangeEvent, useMemo, useCallback } from "react";
+import { HelperFile } from "../lib/helper-file";
+import { read } from 'fs';
+
+const helperFile = new HelperFile()
 
 interface Box {
   id: string;
@@ -64,6 +68,7 @@ function ContentBoxtooler() {
   const [verticalTagId, verticalTagIdSet] = useState("AE01")
   const [_vertical, _verticalSet] = useState("3")
   const [_side, _sideSet] = useState("3")
+  const jsonset = useRef<HTMLInputElement>(null)
 
   const addVerticalAction = () => {
     const item = {
@@ -150,8 +155,54 @@ function ContentBoxtooler() {
     return list.filter((item) => item.status === "run")
   }
 
+  const downloadAction = () => {
+    const jsonItem = {
+      verticalList: verticalList,
+      sideList: sideList,
+    }
+    helperFile.downLoadJSON<{ verticalList: BoxList, sideList: BoxList}>(jsonItem, "verticalandside.json")
+  }
+
+  const textCopy = () => {
+    
+  }
+
+  const handleFileUpload = (ev:ChangeEvent<HTMLInputElement>) => {
+    if(!ev?.target.files) {
+      alert("jsonファイルを利用してください")
+      return 
+    }
+    const file = ev?.target.files[0]
+    const reader = new FileReader()
+    reader.onload = (event) => {
+      if(event.target?.result) {
+        try {
+          const json = JSON.parse(event.target?.result as string)
+          verticalListSet(json.verticalList)
+          sideListSet(json.sideList)
+        } catch (error) {
+          console.error(error) 
+        }
+      }
+    }
+    reader.readAsText(file)
+  }
+
   return (
     <div className="content-boxs">
+      <div className="input-file">
+        <label htmlFor="jsonFile" id="file-input" className='file-input'>
+          jsonファイルを選択してください
+          <input
+            type="file"
+            id='jsonFile'
+            accept="application/json"
+            ref={jsonset}
+            className="jsonset"
+            onChange={handleFileUpload}
+          />
+        </label>
+      </div>
       <div className="control-actions">
         <Form>
           <Form.Field>
@@ -234,7 +285,7 @@ function ContentBoxtooler() {
                   </div>
                   <Button onClick={addSideAction}>add</Button>
                 </div>
-          </Form.Field>
+              </Form.Field>
             </Form>
           </div>
           <div className='box-list flex'>
@@ -262,6 +313,10 @@ function ContentBoxtooler() {
             </div>)}
           </div>
         </div>
+      </div>
+      <div className="blocks-box p-1">
+        <Button onClick={() => downloadAction()}>jsonダウンロード</Button>
+        <Button onClick={() => textCopy()}>テキストコピー</Button>
       </div>
     </div>
   )

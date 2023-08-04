@@ -9,7 +9,7 @@ function ContentTooler() {
   const [open, setOpen] = useState(false)
 
   return (
-    <div className="content-tooler">
+    <div className="content-tooler p-1">
       <Modal
         onClose={() => setOpen(false)}
         onOpen={() => setOpen(true)}
