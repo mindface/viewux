@@ -27,12 +27,12 @@ export class HelperFile {
     return result
   }
 
-  public downLoadJSON<T>(json:T, filenamme:string) {
-    const jsonString = JSON.stringify(json,null,2)
-    const blob = new Blob([jsonString], {type: "application/json"})
+  public downLoadJSON<T>(json: T, filenamme: string) {
+    const jsonString = JSON.stringify(json, null, 2)
+    const blob = new Blob([jsonString], { type: 'application/json' })
     const url = URL.createObjectURL(blob)
 
-    const a = document.createElement("a")
+    const a = document.createElement('a')
     a.href = url
     a.download = filenamme || 'jsondata.json'
     a.click()

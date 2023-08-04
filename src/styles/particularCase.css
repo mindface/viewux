@@ -1,4 +1,3 @@
-
 .maker-flow-image .camnvas {
   z-index: 0;
 }
@@ -13,7 +12,7 @@
   z-index: 12;
 }
 
-.maker-flow-image  .video {
+.maker-flow-image .video {
   position: relative;
   z-index: 13;
 }
@@ -29,7 +28,7 @@
 .make-flow-image .tab-content.view {
   position: relative;
   z-index: 10;
-  visibility:visible;
+  visibility: visible;
 }
 
 .content-categoze .file-output {
@@ -65,18 +64,18 @@
   color: #41bcb6;
 }
 
-.content-boxs  .vertical-list  {
+.content-boxs .vertical-list {
   margin: 0 0 8px;
   color: var(--color-white);
 }
 
-.content-boxs  .vertical-item:nth-child(odd) {
+.content-boxs .vertical-item:nth-child(odd) {
   background-color: #46a5c4;
 }
-.content-boxs  .vertical-item:nth-child(even) {
+.content-boxs .vertical-item:nth-child(even) {
   background-color: #448ac0;
 }
-.content-boxs  .vertical-item  {
+.content-boxs .vertical-item {
   margin: 0 0 8px;
   padding: 8px;
 }

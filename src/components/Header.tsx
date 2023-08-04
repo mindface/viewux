@@ -41,7 +41,7 @@ const pagelist = [
     id: 99,
     name: 'backend',
     path: '/backend',
-  }
+  },
 ]
 
 function Header() {

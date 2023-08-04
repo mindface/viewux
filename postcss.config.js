@@ -2,7 +2,7 @@
 //   plugins: [
 //     'postcss-import',
 //     'tailwindcss',
-//     'postcss-nested', 
+//     'postcss-nested',
 //     'autoprefixer',
 //   ]
 // }
@@ -10,8 +10,8 @@
 module.exports = {
   plugins: {
     'postcss-import': {},
-    'postcss-nested': {}, 
-    'tailwindcss': {},
-    'autoprefixer': {},
-  }
+    'postcss-nested': {},
+    tailwindcss: {},
+    autoprefixer: {},
+  },
 }

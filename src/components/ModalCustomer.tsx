@@ -1,12 +1,5 @@
 import { useState, useMemo } from 'react'
-import {
-  Header,
-  Button,
-  List,
-  Card,
-  Modal,
-  Icon,
-} from 'semantic-ui-react'
+import { Header, Button, List, Card, Modal, Icon } from 'semantic-ui-react'
 import {
   CustomerData,
   MethodList,

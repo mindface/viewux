@@ -1,5 +1,5 @@
-import ContentBoxs from "./ContentBoxs";
-import ContentTooler from "./ContentTooler";
+import ContentBoxs from './ContentBoxs'
+import ContentTooler from './ContentTooler'
 
 function ContainerBoxtooler() {
   return (
@@ -9,5 +9,5 @@ function ContainerBoxtooler() {
     </div>
   )
 }
-  
+
 export default ContainerBoxtooler

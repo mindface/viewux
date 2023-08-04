@@ -32,11 +32,11 @@ img {
   color: var(--color-white);
   cursor: pointer;
 }
-.file-input input{
+.file-input input {
   display: none;
 }
 
-.ui.input>input[type='color'] {
+.ui.input > input[type='color'] {
   padding: 5px;
 }
 

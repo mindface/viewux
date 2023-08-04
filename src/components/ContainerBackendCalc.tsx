@@ -4,9 +4,9 @@ import { userContext } from '../context/user'
 import type { User } from '../context/user'
 
 interface makeInfo {
-  id: number;
-  title: string;
-  detail: string;
+  id: number
+  title: string
+  detail: string
 }
 
 type makeInfoList = makeInfo[]
@@ -20,7 +20,7 @@ function ContainerBackendCalc() {
   })
   const [makeMainNumber, makeMainNumberSet] = useState('1')
 
-  const makeRandom = (min: number, max:number) => {
+  const makeRandom = (min: number, max: number) => {
     const _min = Math.ceil(min)
     const _max = Math.ceil(max)
     return Math.floor(Math.random() * (_max - _min) + _min)
@@ -31,17 +31,20 @@ function ContainerBackendCalc() {
   }
 
   const makeJson = useMemo(() => {
-    if(viewNumber === 0 ) return
+    if (viewNumber === 0) return
     const list: makeInfoList = []
     for (let index = 0; index < viewNumber; index++) {
       list.push({
-        id: index+1,
-        title: `title ${index+1}`,
-        detail: `detail ${makeRandom(stateNumber.mainFieldMin, stateNumber.mainFieldMax+index)}`,
+        id: index + 1,
+        title: `title ${index + 1}`,
+        detail: `detail ${makeRandom(
+          stateNumber.mainFieldMin,
+          stateNumber.mainFieldMax + index,
+        )}`,
       })
     }
-    return list;
-  },[viewNumber])
+    return list
+  }, [viewNumber])
 
   return (
     <div className="container-form">
@@ -52,7 +55,10 @@ function ContainerBackendCalc() {
             placeholder="0"
             value={stateNumber.mainFieldMin}
             onChange={(e) => {
-              stateNumberSet({...stateNumber,mainFieldMin: Number(e.target.value)})
+              stateNumberSet({
+                ...stateNumber,
+                mainFieldMin: Number(e.target.value),
+              })
             }}
           />
           <Input
@@ -60,7 +66,10 @@ function ContainerBackendCalc() {
             placeholder="0"
             value={stateNumber.mainFieldMax}
             onChange={(e) => {
-              stateNumberSet({...stateNumber,mainFieldMax: Number(e.target.value)})
+              stateNumberSet({
+                ...stateNumber,
+                mainFieldMax: Number(e.target.value),
+              })
             }}
           />
         </div>
@@ -72,14 +81,15 @@ function ContainerBackendCalc() {
             type="nunmber"
             placeholder="フィールド"
             value={makeMainNumber}
-            onChange={ (e) => {
-              makeMainNumberSet(e.target.value)}}
+            onChange={(e) => {
+              makeMainNumberSet(e.target.value)
+            }}
           />
           <Button onClick={settingsViewNumberSet} content="作成" primary />
         </div>
       </div>
       <div className="outpput">
-        {makeJson?.map((json,k) => <div key={`json${k}`}>{json.title}</div>)}
+        {makeJson?.map((json, k) => <div key={`json${k}`}>{json.title}</div>)}
       </div>
       <div className="actions pt-1"></div>
     </div>
