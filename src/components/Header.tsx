@@ -38,6 +38,16 @@ const pagelist = [
     path: '/boxtooler',
   },
   {
+    id: 8,
+    name: 'shareLog',
+    path: '/shareLog',
+  },
+  {
+    id: 9,
+    name: 'phasesAndMeans',
+    path: '/phasesAndMeans',
+  },
+  {
     id: 99,
     name: 'backend',
     path: '/backend',
