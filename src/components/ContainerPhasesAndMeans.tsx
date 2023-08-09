@@ -1,5 +1,5 @@
-import { useEffect, useState, useContext } from 'react'
-import { Button, Input, Header } from 'semantic-ui-react'
+import { useEffect, useState } from 'react'
+import { Button, Input } from 'semantic-ui-react'
 
 interface Phase {
   id: string
@@ -40,22 +40,22 @@ function ContainerPhasesAndMeans() {
     phaseListSet([...phaseList, additem])
   }
   const addPhaseItemAction = () => {
-    const additem = {
-      id: `phaseItem${phaseList.length + 1}`,
-      title: title,
-      detail: detail,
-      connectId: '',
-      putSignature: true,
-    }
-    const list = phaseList.map((phase) => {
+    const list = phaseList.map((phase,index) => {
       if (phase.list) {
+        const additem = {
+          id: `phase${index}-phaseItem${phase.list.length + 1}`,
+          title: title,
+          detail: detail,
+          connectId: '',
+          putSignature: true,
+        }
         const phaseItem = [...phase.list, additem]
         phase.list = JSON.parse(JSON.stringify(phaseItem))
       }
       return phase
     })
     phaseListSet(list)
-    phaseItemListSet([...phaseItemList, additem])
+    // phaseItemListSet([...phaseItemList, additem])
   }
 
   const checkPhaseItemAction = (
@@ -67,6 +67,9 @@ function ContainerPhasesAndMeans() {
       if (phase.list && phase.id === phaseId) {
         const itemList = (phase.list ?? []).map((phaseItem) => {
           if (phaseItem.id === phaseItemId) {
+            console.log(phaseId)
+            console.log("|||||||||||||")
+            console.log(phaseItemId)
             phaseItem.putSignature = check
           }
           return phaseItem
@@ -84,7 +87,9 @@ function ContainerPhasesAndMeans() {
       text += '----------------- \n'
       text += `${phase.title}  +| `
       ;(phase?.list ?? []).forEach((phaseItem, index) => {
-        if (phaseItem.putSignature) {
+        console.log(`phaseItem -----------`)
+        console.log(phaseItem)
+        if (phaseItem.putSignature ) {
           text += phaseItem.title + ' | '
           if (phaseItemList.length === index + 1) text += '\n'
         }
@@ -146,7 +151,7 @@ function ContainerPhasesAndMeans() {
           <div className="phase flex" key={`phase${k}`}>
             <div className="phase-item phase-caption">{phase.title}</div>
             {phaseList.length &&
-              phaseItemList.map((phaseItem, h) => (
+              (phase.list ?? []).map((phaseItem, h) => (
                 <div
                   className="phase-item phase-math"
                   key={`phaseItem${k}${h}`}
@@ -154,7 +159,7 @@ function ContainerPhasesAndMeans() {
                   <div className="hover-view p-1">{phaseItem.detail}</div>
                   <span className="caption">
                     <span className="pb-1">
-                      {`${k + 1}-${h}`}
+                      {`${k + 1}-${h + 1}`}
                       <input
                         type="checkbox"
                         defaultChecked={phaseItem.putSignature}
