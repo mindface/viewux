@@ -1,6 +1,7 @@
 import { FormEvent, useState } from 'react'
 import { Form } from 'semantic-ui-react'
 import type { CheckboxProps } from 'semantic-ui-react'
+import KnowledgeCategories from "../json/ca.json";
 
 const options = [
   { key: 'm', text: 'Male', value: 'male' },
@@ -17,6 +18,8 @@ type Props = {
 function ContentInputBox01(props: Props) {
   const { type, statTabAction, className } = props
   const [value, valueSet] = useState('')
+  const [knowledgeCategories, _] = useState(KnowledgeCategories.categories ?? {})
+  
   const _statTabAction = statTabAction ?? (() => {})
 
   // const handleChange = (e: Event, value: any) => {
@@ -76,6 +79,10 @@ function ContentInputBox01(props: Props) {
                 valueSet((data?.value as string) ?? '')
               }}
             />
+          </Form.Group>
+            {knowledgeCategories.map((knowledgeCategory,k) => <Form.Field key={`knowledgeCategory${k}`}>{knowledgeCategory.name} | {knowledgeCategory.ja}</Form.Field>)}
+            
+          <Form.Group>
           </Form.Group>
           <Form.TextArea label="備考" placeholder="学習専攻は〇〇で...." />
           {type === 'tab' && (
