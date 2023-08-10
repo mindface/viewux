@@ -39,7 +39,7 @@ function ContentShareLog() {
 
   return (
     <div className="content-share-log">    
-    組織平均比率 [向上比率、個人比率,]
+      一般論上での意味平均比率 [向上比率、個人比率]を現状持っている課題で決めたい
       <div className="make-info flex">
         <div className="half">
           <Form>
