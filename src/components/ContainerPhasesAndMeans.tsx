@@ -112,9 +112,6 @@ function ContainerPhasesAndMeans() {
           }
           return phaseItem
         })
-        console.log('phaseItemListSet///////////')
-        console.log(phaseItemList)
-        console.log(list)
         phaseItemListSet(list)
       }
     })
