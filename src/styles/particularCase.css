@@ -86,3 +86,50 @@
   background-color: #46a5c4;
   color: var(--color-white);
 }
+
+.container-phases-means .phase-caption {
+  max-width: 180px;
+  width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.container-phases-means .phase-math {
+  max-width: 80px;
+  width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.container-phases-means .phase-math:hover {
+  overflow: visible;
+}
+
+.container-phases-means .phase-item {
+  position: relative;
+  padding: 4px;
+  background-color: #4183c4;
+  color: var(--color-white);
+  border: 1px solid #448ac0;
+}
+
+.container-phases-means .hover-view {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1;
+  display: none;
+  background-color: var(--color-white);
+  color: #4183c4;
+  border: 1px solid #4183c4;
+}
+
+.container-phases-means .phase-item:hover .hover-view {
+  display: block;
+}
+
+.container-phases-means .phase-item .caption {
+  padding: 2px;
+}

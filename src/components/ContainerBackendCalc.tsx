@@ -1,7 +1,6 @@
-import { useEffect, useState, useContext, useMemo } from 'react'
+import { useEffect, useState, useMemo } from 'react'
 import { Button, Input } from 'semantic-ui-react'
 import { userContext } from '../context/user'
-import type { User } from '../context/user'
 
 interface makeInfo {
   id: number
@@ -12,7 +11,6 @@ interface makeInfo {
 type makeInfoList = makeInfo[]
 
 function ContainerBackendCalc() {
-  const { state } = useContext(userContext)
   const [viewNumber, viewNumberSet] = useState(0)
   const [stateNumber, stateNumberSet] = useState({
     mainFieldMin: 0,
@@ -55,6 +53,7 @@ function ContainerBackendCalc() {
             placeholder="0"
             value={stateNumber.mainFieldMin}
             onChange={(e) => {
+              console.log(e)
               stateNumberSet({
                 ...stateNumber,
                 mainFieldMin: Number(e.target.value),
@@ -89,7 +88,12 @@ function ContainerBackendCalc() {
         </div>
       </div>
       <div className="outpput">
-        {makeJson?.map((json, k) => <div key={`json${k}`}>{json.title}</div>)}
+        {makeJson?.map((json, k) => (
+          <div key={`json${k}`}>
+            {json.title}
+            {json.detail}
+          </div>
+        ))}
       </div>
       <div className="actions pt-1"></div>
     </div>
